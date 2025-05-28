@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     switch ($action) {
         case 'cancel_booking':
-            $sql = "UPDATE Bookings SET booking_status = 'cancelled' WHERE booking_id = :booking_id";
+            $sql = "DELETE FROM Bookings WHERE booking_id = :booking_id";
             $stmt = $conn->prepare($sql);
             if ($stmt === false) {
                 setFlashMessage('error', 'Database error.');
