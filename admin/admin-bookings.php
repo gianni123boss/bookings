@@ -59,8 +59,7 @@ $sql = "
     SELECT b.*, 
            u.name AS user_name,
            s.address_street,
-           s.address_city,
-           cp.occupied
+           s.address_city
     FROM Bookings b
     JOIN Users u ON b.user_id = u.user_id
     JOIN Charging_Points cp ON b.charging_point_id = cp.charging_point_id
